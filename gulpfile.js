@@ -11,12 +11,17 @@ var DEST = './dist';
  */
 
 var svgSpriteConfig = {
+  // Compile a single `icons.svg` file, with each icon asset included as a
+  // <symbol> therein.
   mode: {
     symbol: {
       dest: '',
       sprite: 'icons.svg'
     }
   },
+
+  // Add attributes to the root SVG element to insure it isn't visible in case
+  // the polyfill needs to inject it into the page itself.
   svg: {
     rootAttributes: {
       style: 'position: absolute; width: 0; height: 0;',
@@ -24,6 +29,9 @@ var svgSpriteConfig = {
       height: 0
     }
   },
+
+  // Set the ID attribute of each symbol to its filename (minus extension) plus
+  // the suffix `-icon` to avoid conflicts with any IDs in the same document.
   shape: {
     id: {
       generator: function (name) {
