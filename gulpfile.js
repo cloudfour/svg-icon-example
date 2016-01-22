@@ -69,7 +69,7 @@ gulp.task('deploy', ['build'], function (cb) {
   ghpages.publish(path.join(process.cwd(), DEST), cb);
 });
 
-gulp.task('serve', function (cb) {
+gulp.task('serve', ['build'], function (cb) {
   browserSync.init({
     server: {
       baseDir: './dist'
@@ -82,4 +82,4 @@ gulp.task('watch', function () {
   gulp.watch(SRC + '/static/**/*', ['static']);
 });
 
-gulp.task('default', ['build', 'serve', 'watch']);
+gulp.task('default', ['serve', 'watch']);
