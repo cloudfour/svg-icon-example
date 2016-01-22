@@ -62,6 +62,8 @@ gulp.task('static', function () {
  * Development-related tasks
  */
 
+gulp.task('build', ['icons', 'static']);
+
 gulp.task('serve', function (cb) {
   browserSync.init({
     server: {
@@ -75,4 +77,4 @@ gulp.task('watch', function () {
   gulp.watch(SRC + '/static/**/*', ['static']);
 });
 
-gulp.task('default', ['icons', 'static', 'serve', 'watch']);
+gulp.task('default', ['build', 'serve', 'watch']);
