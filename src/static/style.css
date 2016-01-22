@@ -29,6 +29,10 @@
  * Base
  */
 
+* {
+  margin: 0;
+}
+
 html {
   background: #eee;
   box-sizing: border-box;
@@ -53,16 +57,16 @@ html {
 
 body {
   color: #111;
-  font-family: sans-serif;
+  counter-reset: example;
+  font-family: "Source Sans Pro", sans-serif;
   line-height: 1.5;
   margin: auto;
   padding: 0 1.5em 1.5em;
 }
 
-ul,
-p {
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
+h1 {
+  font-size: 1em;
+  text-transform: uppercase;
 }
 
 a {
@@ -85,6 +89,34 @@ label {
  * Components
  */
 
+.Example {
+  border: 0 solid #ddd;
+  padding: 1.5em 0;
+}
+
+.Example + .Example {
+  border-top-width: 0.125em;
+}
+
+.Example > figcaption {
+  font-size: 0.875em;
+  margin: 1.5em 0 0;
+}
+
+.Example > figcaption:before {
+  counter-increment: example;
+  content: "Fig. " counter(example) ":\00a0 ";
+  font-size: 0.75em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+@media (min-width: 30em) {
+  .Example > figcaption {
+    font-size: 0.667em;
+  }
+}
+
 .InlineList {
   list-style: none;
   margin-left: -0.5em;
@@ -97,6 +129,11 @@ label {
   margin: 0 0.5em;
 }
 
+.InlineList--fill {
+  display: flex;
+  justify-content: space-between;
+}
+
 .Field {
   background: #fff;
   border: 0.125em solid #aaa;
@@ -104,11 +141,11 @@ label {
   box-shadow: none;
   color: inherit;
   display: inline-block;
-  font: inherit;
-  height: 2.75em; /* IE is just the worst */
+  font-size: 1em;
+  line-height: 1;
   margin: 0;
   outline: none;
-  padding: 0.5em 1em;
+  padding: 0.6875em 1em;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -127,10 +164,11 @@ label {
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font: inherit;
+  font-size: 1em;
+  line-height: 1;
   margin: 0;
   outline: none;
-  padding: 0.5em 1em;
+  padding: 0.6875em 1em;
   position: relative;
   text-align: center;
   text-decoration: none;
@@ -164,10 +202,7 @@ label {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
   border-right-width: 0;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  flex: 1;
   width: auto;
 }
 
@@ -188,8 +223,4 @@ label {
   padding: 0 !important;
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
-}
-
-.u-textCenter {
-  text-align: center !important;
 }
