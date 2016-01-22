@@ -1,0 +1,195 @@
+/**
+ * Icon component
+ *
+ * 1. Display inline with surrounding text content.
+ * 2. Inherit the parent text color for icon fills.
+ * 3. Use parent font-size for width and height.
+ * 4. Vertically align icon with surrounding text.
+ *    See: http://snook.ca/archives/html_and_css/icons-and-type
+ */
+
+.Icon {
+  display: inline-block; /* 1 */
+  fill: currentColor; /* 2 */
+  height: 1em; /* 3 */
+  position: relative; /* 4 */
+  top: -0.1em; /* 4 */
+  vertical-align: middle; /* 4 */
+  width: 1em; /* 3 */
+}
+
+/**
+ *
+ * Everything past this point is for demonstration purposes. Not required for
+ * your SVG icon solution!
+ *
+ */
+
+/**
+ * Base
+ */
+
+html {
+  background: #eee;
+  box-sizing: border-box;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (min-width: 30em) {
+  html {
+    font-size: 24px;
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  color: #111;
+  font-family: sans-serif;
+  line-height: 1.5;
+  margin: auto;
+  padding: 0 1.5em 1.5em;
+}
+
+ul,
+p {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+a {
+  color: #0074D9;
+  text-decoration: none;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+
+a:hover,
+a:focus {
+  color: #09baff;
+}
+
+label {
+  cursor: pointer;
+}
+
+/**
+ * Components
+ */
+
+.InlineList {
+  list-style: none;
+  margin-left: -0.5em;
+  margin-right: -0.5em;
+  padding-left: 0;
+}
+
+.InlineList > li {
+  display: inline-block;
+  margin: 0 0.5em;
+}
+
+.Field {
+  background: #fff;
+  border: 0.125em solid #aaa;
+  border-radius: 0.25em;
+  box-shadow: none;
+  color: inherit;
+  display: inline-block;
+  font: inherit;
+  height: 2.75em; /* IE is just the worst */
+  margin: 0;
+  outline: none;
+  padding: 0.5em 1em;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+
+.Field:focus {
+  border-color: #09baff;
+}
+
+.Button {
+  background: #0074D9;
+  border: 0.125em solid transparent;
+  border-radius: 0.25em;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font: inherit;
+  margin: 0;
+  outline: none;
+  padding: 0.5em 1em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.Button:focus {
+  background-color: #09baff;
+}
+
+.Alert {
+  background: #f2d5d5;
+  border: 0.125em solid #f28c8c;
+  border-radius: 0.25em;
+  padding: 0.5em 1em;
+}
+
+.SimpleForm {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.SimpleForm-field {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  border-right-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  width: auto;
+}
+
+.SimpleForm-button {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+/**
+ * Utilities
+ */
+
+.u-hiddenVisually {
+  position: absolute !important;
+  overflow: hidden !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+}
+
+.u-textCenter {
+  text-align: center !important;
+}

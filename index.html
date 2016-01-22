@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>SVG Icon Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<ul class="InlineList u-textCenter">
+  <li>
+    <a href="#">
+      <svg class="Icon">
+        <use xlink:href="icons.svg#back-icon"/>
+      </svg>
+      Previous
+    </a>
+  </li>
+  <li>
+    <a href="#">
+      Next
+      <svg class="Icon">
+        <use xlink:href="icons.svg#forward-icon"/>
+      </svg>
+    </a>
+  </li>
+</ul>
+
+<div class="SimpleForm">
+  <label class="u-hiddenVisually" for="q">Search</label>
+  <input class="Field SimpleForm-field" type="text" id="q" placeholder="Search...">
+  <button class="Button SimpleForm-button" type="button">
+    <svg class="Icon" title="Submit">
+      <use xlink:href="icons.svg#search-icon"/>
+    </svg>
+  </button>
+</div>
+
+<p class="Alert">
+  <svg class="Icon">
+    <use xlink:href="icons.svg#error-icon"/>
+  </svg>
+  Oops, something went wrong!
+</p>
+
+<script src="svgxuse.js" defer></script>
+</body>
+</html>
