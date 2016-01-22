@@ -1,8 +1,16 @@
 var gulp = require('gulp');
 var svgSprite = require('gulp-svg-sprite');
+var browserSync = require('browser-sync').create();
 var path = require('path');
 
-var config = {
+var SRC = './src';
+var DEST = './dist';
+
+/**
+ * Icons
+ */
+
+var svgSpriteConfig = {
   mode: {
     symbol: {
       dest: '',
@@ -26,7 +34,37 @@ var config = {
 };
 
 gulp.task('icons', function () {
-  return gulp.src('./src/icons/**/*.svg')
-    .pipe(svgSprite(config))
-    .pipe(gulp.dest('dist'));
+  return gulp.src(SRC + '/icons/**/*.svg')
+    .pipe(svgSprite(svgSpriteConfig))
+    .pipe(gulp.dest(DEST))
+    .pipe(browserSync.stream());
 });
+
+/**
+ * Static files
+ */
+
+gulp.task('static', function () {
+  return gulp.src(SRC + '/static/**/*')
+    .pipe(gulp.dest(DEST))
+    .pipe(browserSync.stream());
+});
+
+/**
+ * Development-related tasks
+ */
+
+gulp.task('serve', function (cb) {
+  browserSync.init({
+    server: {
+      baseDir: './dist'
+    }
+  }, cb);
+});
+
+gulp.task('watch', function () {
+  gulp.watch(SRC + '/icons/**/*.svg', ['icons']);
+  gulp.watch(SRC + '/static/**/*', ['static']);
+});
+
+gulp.task('default', ['icons', 'static', 'serve', 'watch']);

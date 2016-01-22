@@ -9,6 +9,7 @@
   "author": "Tyler Sticka",
   "license": "MIT",
   "devDependencies": {
+    "browser-sync": "^2.11.1",
     "gulp": "^3.9.0",
     "gulp-svg-sprite": "^1.2.19"
   },
