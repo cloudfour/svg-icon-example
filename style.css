@@ -13,7 +13,7 @@
   fill: currentColor; /* 2 */
   height: 1em; /* 3 */
   position: relative; /* 4 */
-  top: -0.1em; /* 4 */
+  top: -0.0625em; /* 4 */
   vertical-align: middle; /* 4 */
   width: 1em; /* 3 */
 }
