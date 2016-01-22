@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var svgSprite = require('gulp-svg-sprite');
 var browserSync = require('browser-sync').create();
+var ghpages = require('gh-pages');
 var path = require('path');
 
 var SRC = './src';
@@ -63,6 +64,10 @@ gulp.task('static', function () {
  */
 
 gulp.task('build', ['icons', 'static']);
+
+gulp.task('deploy', ['build'], function (cb) {
+  ghpages.publish(path.join(process.cwd(), DEST), cb);
+});
 
 gulp.task('serve', function (cb) {
   browserSync.init({
