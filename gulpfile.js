@@ -31,13 +31,11 @@ var svgSpriteConfig = {
     }
   },
 
-  // Set the ID attribute of each symbol to its filename (minus extension) plus
-  // the suffix `-icon` to avoid conflicts with any IDs in the same document.
+  // Append `-icon` to ID names to avoid conflicts if polyfill injects sprite
+  // directly into the document.
   shape: {
     id: {
-      generator: function (name) {
-        return path.basename(name, path.extname(name)) + '-icon';
-      }
+      generator: '%s-icon'
     }
   }
 };
