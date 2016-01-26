@@ -1,0 +1,15 @@
+back:
+  title: Back
+  description: A leftward arrow
+
+error:
+  title: Error
+  description: A red sign with a white exclamation mark
+
+forward:
+  title: Forward
+  description: A rightward arrow
+
+search:
+  title: Search
+  description: A magnifying glass

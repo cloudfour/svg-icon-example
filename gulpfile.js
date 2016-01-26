@@ -21,6 +21,16 @@ var svgSpriteConfig = {
     }
   },
 
+  shape: {
+    // Include titles and descriptions from this file.
+    meta: SRC + '/icons/icons.yaml',
+    // Append `-icon` to ID names to avoid conflicts if polyfill injects sprite
+    // directly into the document.
+    id: {
+      generator: '%s-icon'
+    }
+  },
+
   // Add attributes to the root SVG element to insure it isn't visible in case
   // the polyfill needs to inject it into the page itself.
   svg: {
@@ -28,14 +38,6 @@ var svgSpriteConfig = {
       style: 'position: absolute; width: 0; height: 0;',
       width: 0,
       height: 0
-    }
-  },
-
-  // Append `-icon` to ID names to avoid conflicts if polyfill injects sprite
-  // directly into the document.
-  shape: {
-    id: {
-      generator: '%s-icon'
     }
   }
 };
