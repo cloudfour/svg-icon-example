@@ -1,7 +1,7 @@
 # SVG Icon Process Example
 
 - [Explanatory blog post](http://blog.cloudfour.com/our-svg-icon-process/)
-- [Live Demo](http://cloudfour.github.io/svg-icon-example/)
+- [Live demo](http://cloudfour.github.io/svg-icon-example/)
 
 ## Getting started
 
