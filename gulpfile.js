@@ -29,16 +29,6 @@ var svgSpriteConfig = {
     id: {
       generator: '%s-icon'
     }
-  },
-
-  // Add attributes to the root SVG element to insure it isn't visible in case
-  // the polyfill needs to inject it into the page itself.
-  svg: {
-    rootAttributes: {
-      style: 'position: absolute; width: 0; height: 0;',
-      width: 0,
-      height: 0
-    }
   }
 };
 
